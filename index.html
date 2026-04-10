@@ -304,38 +304,44 @@
     }
 
     .avatar-rotund {
-  width: 200px;          /* sau ce dimensiune vrei */
-  height: 200px;         /* ideal pătrată pentru cerc perfect */
-  border-radius: 50%;    /* decupare pe rotund */
-  border: 2px solid #ff8300; /* bordură portocalie de 2px */
-  object-fit: cover;     /* ca să umple frumos cadrul rotund */
-}
+      width: 200px;
+      /* sau ce dimensiune vrei */
+      height: 200px;
+      /* ideal pătrată pentru cerc perfect */
+      border-radius: 50%;
+      /* decupare pe rotund */
+      border: 2px solid #ff8300;
+      /* bordură portocalie de 2px */
+      object-fit: cover;
+      /* ca să umple frumos cadrul rotund */
+    }
 
-.lista-custom {
-  list-style: none;          /* scoatem marcatorii default */
-  padding-left: 0;
-}
+    .lista-custom {
+      list-style: none;
+      /* scoatem marcatorii default */
+      padding-left: 0;
+    }
 
-.lista-custom li {
-  position: relative;
-  padding-left: 28px;        /* spațiu pentru iconiță */
-}
+    .lista-custom li {
+      position: relative;
+      padding-left: 28px;
+      /* spațiu pentru iconiță */
+    }
 
-.lista-custom li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 20px;               /* dimensiunea imaginii */
-  height: 20px;
-  transform: translateY(-50%);
-  background-image: url("mico.png");
-  background-size: cover;    /* sau contain, după caz */
-  background-repeat: no-repeat;
-}
-
-
-
+    .lista-custom li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 20px;
+      /* dimensiunea imaginii */
+      height: 20px;
+      transform: translateY(-50%);
+      background-image: url("mico.png");
+      background-size: cover;
+      /* sau contain, după caz */
+      background-repeat: no-repeat;
+    }
   </style>
 
 </head>
@@ -391,27 +397,30 @@
 
         <h3>PodPaths – Podcasturi despre Cariere</h3>
 
-<h4>Despre podcasturile noastre</h4>
-<p>
-  PodPaths este un spațiu dedicat celor care vor să înțeleagă mai bine lumea profesională, fără clișee și fără presiune. 
-  Prin discuții relaxate și povești reale, fiecare episod deschide o fereastră către parcursul unor oameni din domenii diferite 
-  și arată cum arată, de fapt, drumul către o carieră construită pas cu pas.
-</p>
+        <h4>Despre podcasturile noastre</h4>
+        <p>
+          PodPaths este un spațiu dedicat celor care vor să înțeleagă mai bine lumea profesională, fără clișee și fără
+          presiune.
+          Prin discuții relaxate și povești reale, fiecare episod deschide o fereastră către parcursul unor oameni din
+          domenii diferite
+          și arată cum arată, de fapt, drumul către o carieră construită pas cu pas.
+        </p>
 
-<h5>Cariere abordate în episoadele noastre:</h5>
-<ul class="lista-custom">
-  <li><strong>Episodul 1</strong> – Povestea unei foste educatoare.</li>
-  <li><strong>Episodul 2</strong> – Discuție cu o asistentă stomatolog.</li>
-  <li><strong>Episodul 3</strong> – Podcast cu ...</li>
-  <li><strong>Episodul 4</strong> – Podcast cu ...</li>
-  <li><strong>Episodul 5</strong> – Podcast cu ...</li>
-  <li><strong>Episodul 6</strong> – Podcast cu ...</li>
-</ul>
+        <h5>Cariere abordate în episoadele noastre:</h5>
+        <ul class="lista-custom">
+          <li><strong>Episodul 1</strong> – Povestea unei foste educatoare.</li>
+          <li><strong>Episodul 2</strong> – Discuție cu o asistentă stomatolog.</li>
+          <li><strong>Episodul 3</strong> – Podcast cu ...</li>
+          <li><strong>Episodul 4</strong> – Podcast cu ...</li>
+          <li><strong>Episodul 5</strong> – Podcast cu ...</li>
+          <li><strong>Episodul 6</strong> – Podcast cu ...</li>
+        </ul>
 
-<p>
-  PodPaths devine, treptat, un loc în care oricine poate descoperi diversitatea lumii profesionale prin povești autentice. 
-  Fiecare episod oferă inspirație, claritate și curajul de a-ți urma propriul drum, în ritmul tău.
-</p>
+        <p>
+          PodPaths devine, treptat, un loc în care oricine poate descoperi diversitatea lumii profesionale prin povești
+          autentice.
+          Fiecare episod oferă inspirație, claritate și curajul de a-ți urma propriul drum, în ritmul tău.
+        </p>
 
       </div>
 
@@ -429,6 +438,7 @@
         <div class="custom-audio-player d-flex flex-column">
           <img src="vio.jpeg" class="avatar-rotund" alt="Avatar">
           <h3 style="color: #ff8300;">Episodul 1</h3>
+          <h4 style=" color: #ff8300;">Cariera unei foste educatoare - Viorica Drăgan</h4>
           <button class="play-pause">Play</button>
           <input type="range" class="slider" min="0" value="0">
           <audio src="Say Yes To Heaven.mp3"></audio>
@@ -439,6 +449,7 @@
         <div class="custom-audio-player d-flex flex-column">
           <img src="ani.jpeg" class="avatar-rotund" alt="Avatar">
           <h3 style="color: #ff8300;">Episodul 2</h3>
+          <h4 style=" color: #ff8300;">Cariera unei asistente stomatolog - Ana Petrar</h4>
           <button class="play-pause">Play</button>
           <input type="range" class="slider" min="0" value="0">
           <audio src="Say Yes To Heaven.mp3"></audio>
@@ -451,8 +462,8 @@
 
   <h2 id="C" class="pth2 bolo"> Podcast-uri Ameea </h2>
 
-  
-<div class="container">
+
+  <div class="container">
     <div class="row align-items-stretch margarina gx-0 gx-md-4 gy-4 gy-md-0 ">
 
       <div class="col-12 col-md-6 mb-6">
