@@ -312,6 +312,30 @@
   object-fit: cover;     /* ca să umple frumos cadrul rotund */
 }
 
+.lista-custom {
+  list-style: none;          /* scoatem marcatorii default */
+  padding-left: 0;
+}
+
+.lista-custom li {
+  position: relative;
+  padding-left: 28px;        /* spațiu pentru iconiță */
+}
+
+.lista-custom li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 20px;               /* dimensiunea imaginii */
+  height: 20px;
+  transform: translateY(-50%);
+  background-image: url("mico.png");
+  background-size: cover;    /* sau contain, după caz */
+  background-repeat: no-repeat;
+}
+
+
 
   </style>
 
@@ -376,7 +400,7 @@
 </p>
 
 <h5>Cariere abordate în episoadele noastre:</h5>
-<ul>
+<ul class="lista-custom">
   <li><strong>Episodul 1</strong> – Povestea unei foste educatoare.</li>
   <li><strong>Episodul 2</strong> – Discuție cu o asistentă stomatolog.</li>
   <li><strong>Episodul 3</strong> – Podcast cu ...</li>
