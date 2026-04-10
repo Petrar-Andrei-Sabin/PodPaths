@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Andrei-Sabin Petrar, Ameea Jurca, Mara-Elena Croitoru">
+  <meta name="keywords" content="podcast, cariere">
+  <meta name="description" content="PodPaths' Official Webpage">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="podpaths_logo.png" class="logo">
+
+  <title>PodPaths Webpage</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <style>
+    @font-face {
+      font-family: 'FontulMeu';
+      src: url('podpaths_font.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'FontulMeu', sans-serif;
+      background-color: #000000 !important;
+      color: #ff8300;
+    }
+
+    .bg {
+      background: #7100b8;
+      color: #ff8300;
+      border: 2px solid #ff8300;
+    }
+
+    .navborder {
+      border: 2px solid #ff8300;
+    }
+
+    .banner {
+      min-height: 50vh;
+      background-image: url('podpaths_bg.jpg');
+      background-repeat: repeat;
+      background-size: 200px;
+      /* ajustează după cum arată patternul */
+      background-position: top left;
+      position: relative;
+      padding: 60px 0;
+    }
+
+    /* Navbar negru */
+    .navbar {
+      background-color: #7100b8 !important;
+    }
+
+    /* Text galben în navbar */
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+      color: #ff8300 !important;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .navbar-brand:hover {
+      color: #ff8300 !important;
+    }
+
+    /* Buton Search galben */
+    .navbar .btn-outline-success {
+      color: #ff8300 !important;
+      border-color: #ff8300 !important;
+    }
+
+    .navbar .btn-outline-success:hover {
+      background-color: #ff8300 !important;
+      color: #7100b8 !important;
+    }
+
+    /* Input Search galben */
+    .navbar .form-control {
+      border: 1px solid #ff8300 !important;
+      color: #ff8300 !important;
+      background-color: transparent !important;
+    }
+
+    .navbar .form-control::placeholder {
+      color: #ff8300 !important;
+      opacity: 0.7;
+    }
+
+    .navbar .form-control:focus {
+      border-color: #ff8300 !important;
+      box-shadow: 0 0 0 0.25rem #ff830088 !important;
+      outline: none !important;
+    }
+
+    /* Hamburger galben fără hover */
+    .navbar-toggler {
+      border-color: #ff8300 !important;
+    }
+
+    .navbar-toggler:hover,
+    .navbar-toggler:focus {
+      background-color: transparent !important;
+      border-color: #ff8300 !important;
+      box-shadow: none !important;
+    }
+
+    /* Linii galbene în hamburger */
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ff8300' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+    }
+
+    .navbar-nav-scroll::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .navbar-nav-scroll::-webkit-scrollbar-track {
+      background: #ff830088;
+      /* fundal verde închis */
+      border-radius: 5px;
+    }
+
+    .navbar-nav-scroll::-webkit-scrollbar-thumb {
+      background-color: #ff8300;
+      /* galben solar permanent */
+      border-radius: 5px;
+      border: 2px solid #ff830088;
+    }
+
+    /* Eliminăm orice efect de hover */
+    .navbar-nav-scroll::-webkit-scrollbar-thumb:hover {
+      background-color: #ff8300 !important;
+    }
+
+    /* Eliminăm orice efect de focus (dacă apare) */
+    .navbar-nav-scroll:focus::-webkit-scrollbar-thumb {
+      background-color: #ff8300 !important;
+    }
+
+    .clear-btn {
+      position: absolute;
+      right: 90px;
+      /* ajustează după nevoie */
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .clear-btn::before,
+    .clear-btn::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 14px;
+      height: 2px;
+      background-color: #ff8300;
+      border-radius: 2px;
+      transform-origin: center;
+    }
+
+    .clear-btn::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .clear-btn::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .highlight {
+      color: #000000;
+    }
+
+    .custom-audio-player {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #7100b8;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 2px solid #ff8300;
+      width: 400px;
+    }
+
+    .custom-audio-player button {
+      background-color: #ff8300;
+      color: #7100b8;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 15px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+
+
+    .slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 12px;
+      border-radius: 6px;
+      background-color: #000000;
+      outline: none;
+    }
+
+    /* Thumb cu dovlecel */
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 32px;
+      height: 32px;
+      margin-top: -10px;
+      background: url('podpaths_logo.png') no-repeat center;
+      background-size: contain;
+      border: none;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 32px;
+      height: 32px;
+      background: url('podpaths_logo.png') no-repeat center;
+      background-size: contain;
+      border: none;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-progress {
+      background-color: #ff8300;
+      border-radius: 6px;
+    }
+
+    .slider::-moz-range-track {
+      background-color: #000000;
+      border-radius: 6px;
+    }
+
+
+    .custom-audio-player {
+      width: 100%;
+    }
+
+    .pth2in {
+      color: #ff8300;
+      padding: 20px;
+      border-style: solid;
+      border-color: #ff8300;
+      border-width: 0 2px 2px 2px;
+      text-align: center;
+      margin: 0px;
+    }
+
+    .pth2 {
+      color: #ff8300;
+      padding: 20px;
+      border: 2px solid #ff8300;
+      text-align: center;
+      margin: 0px 0px !important;
+    }
+
+    .contact-box {
+      height: 100%;
+      border-radius: 14px;
+      border: 2px solid #ff8300;
+      padding: 25px;
+
+    }
+
+    @media (max-width: 767px) {
+      .padding-mobile {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+    }
+
+    .bolo {
+      background: #7100b8;
+    }
+
+    body {
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      /* sub tot */
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .margarina {
+      margin: 20px 0px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary navborder">
+
+    <div class="container-fluid"><a class="navbar-brand" href="#"><img src="podpaths_logo.png"
+          style="width: 60px; padding: 10px;">PodPaths</a><button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item"><a class="nav-link" href="#A">Despre Podcast-uri</a></li>
+          <li class="nav-item"><a class="nav-link" href="#B">Podcast-uri Andrei</a></li>
+          <li class="nav-item"><a class="nav-link" href="#C">Podcast-uri Ameea</a></li>
+          <li class="nav-item"><a class="nav-link" href="#D">Podcast-uri Mara</a></li>
+        </ul>
+        <form class="d-flex position-relative" role="search">
+          <input id="searchInput" class="form-control me-2 pe-5" type="text" placeholder="Search" aria-label="Search" />
+
+          <button type="button" id="clearSearch" class="clear-btn">
+          </button>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="banner d-flex align-items-center navborder" style="border-top: 0px;">
+    <div class="container text-center bg">
+      <h1>Bun venit pe pagina web a PodPhats</h1>
+      <p style="font-size: 1.2em;">Acesta este site-ul oficial al PodPaths</p>
+    </div>
+  </section>
+
+  <h2 id="A" class="pth2in bolo">Despre Podcast-uri</h2>
+
+  <div class="container padding-mobile">
+    <div class="row align-items-stretch margarina gx-0 gx-md-4 gy-4 gy-md-0">
+
+      <div class="col-12 col-md-4">
+        <div class="h-100" style="border: 2px solid #ff8300; border-radius: 14px; overflow: hidden;">
+          <img src="podpaths_imag.jpg" class="w-100 h-100" style="object-fit: cover;">
+        </div>
+      </div>
+
+
+
+      <div class="col-12 col-md-8 d-flex flex-column contact-box bolo">
+
+        <h3>PodPaths – Podcasturi despre Cariere</h3>
+
+<h4>Despre podcasturile noastre</h4>
+<p>
+  PodPaths este un spațiu dedicat celor care vor să înțeleagă mai bine lumea profesională, fără clișee și fără presiune. 
+  Prin discuții relaxate și povești reale, fiecare episod deschide o fereastră către parcursul unor oameni din domenii diferite 
+  și arată cum arată, de fapt, drumul către o carieră construită pas cu pas.
+</p>
+
+<h5>Cariere abordate în episoadele noastre:</h5>
+<ul>
+  <li><strong>Episodul 1</strong> – Povestea unei foste educatoare.</li>
+  <li><strong>Episodul 2</strong> – Discuție cu o asistentă stomatolog.</li>
+  <li><strong>Episodul 3</strong> – Podcast cu ...</li>
+  <li><strong>Episodul 4</strong> – Podcast cu ...</li>
+  <li><strong>Episodul 5</strong> – Podcast cu ...</li>
+  <li><strong>Episodul 6</strong> – Podcast cu ...</li>
+</ul>
+
+<p>
+  PodPaths devine, treptat, un loc în care oricine poate descoperi diversitatea lumii profesionale prin povești autentice. 
+  Fiecare episod oferă inspirație, claritate și curajul de a-ți urma propriul drum, în ritmul tău.
+</p>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <h2 id="B" class="pth2 bolo"> Podcast-uri Andrei </h2>
+
+
+  <div class="container">
+    <div class="row align-items-stretch margarina gx-0 gx-md-4 gy-4 gy-md-0 ">
+
+      <div class="col-12 col-md-6 mb-6">
+        <div class="custom-audio-player d-flex flex-column">
+          <h3 style="color: #ff8300;">Episodul 1</h3>
+          <button class="play-pause">Play</button>
+          <input type="range" class="slider" min="0" value="0">
+          <audio src="Say Yes To Heaven.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mb-6">
+        <div class="custom-audio-player d-flex flex-column">
+          <h3 style="color: #ff8300;">Episodul 2</h3>
+          <button class="play-pause">Play</button>
+          <input type="range" class="slider" min="0" value="0">
+          <audio src="Say Yes To Heaven.mp3"></audio>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <h2 id="C" class="pth2 bolo"> Podcast-uri Ameea </h2>
+
+  
+<div class="container">
+    <div class="row align-items-stretch margarina gx-0 gx-md-4 gy-4 gy-md-0 ">
+
+      <div class="col-12 col-md-6 mb-6">
+        <div class="custom-audio-player d-flex flex-column">
+          <h3 style="color: #ff8300;">Episodul 1</h3>
+          <button class="play-pause">Play</button>
+          <input type="range" class="slider" min="0" value="0">
+          <audio src="Say Yes To Heaven.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mb-6">
+        <div class="custom-audio-player d-flex flex-column">
+          <h3 style="color: #ff8300;">Episodul 2</h3>
+          <button class="play-pause">Play</button>
+          <input type="range" class="slider" min="0" value="0">
+          <audio src="Say Yes To Heaven.mp3"></audio>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <h2 id="D" class="pth2 bolo"> Podcast-uri Mara </h2>
+
+  <div class="container">
+    <div class="row align-items-stretch margarina gx-0 gx-md-4 gy-4 gy-md-0 ">
+
+      <div class="col-12 col-md-6 mb-6">
+        <div class="custom-audio-player d-flex flex-column">
+          <h3 style="color: #ff8300;">Episodul 5</h3>
+          <button class="play-pause">Play</button>
+          <input type="range" class="slider" min="0" value="0">
+          <audio src="Say Yes To Heaven.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mb-6">
+        <div class="custom-audio-player d-flex flex-column">
+          <h3 style="color: #ff8300;">Episodul 6</h3>
+          <button class="play-pause">Play</button>
+          <input type="range" class="slider" min="0" value="0">
+          <audio src="Say Yes To Heaven.mp3"></audio>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <script>
+    const players = document.querySelectorAll('.custom-audio-player');
+
+    players.forEach(player => {
+      const audio = player.querySelector('audio');
+      const slider = player.querySelector('.slider');
+      const playBtn = player.querySelector('.play-pause');
+
+      // Play / Pauză cu oprirea altor playeri
+      playBtn.addEventListener('click', () => {
+        // Oprește toate celelalte audio
+        players.forEach(p => {
+          const a = p.querySelector('audio');
+          const b = p.querySelector('.play-pause');
+          if (a !== audio) {
+            a.pause();
+            b.textContent = "Play";
+          }
+        });
+
+        // Pornește sau oprește player-ul curent
+        if (audio.paused) {
+          audio.play();
+          playBtn.textContent = "Pause";
+        } else {
+          audio.pause();
+          playBtn.textContent = "Play";
+        }
+      });
+
+      // Setează maximul slider-ului după ce audio-ul se încarcă
+      audio.addEventListener('loadedmetadata', () => {
+        slider.max = audio.duration;
+      });
+
+      // Actualizare slider în timp real
+      audio.addEventListener('timeupdate', () => {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        slider.value = audio.currentTime;
+        slider.style.background = `linear-gradient(to right, #ff8300 0%, #ff8300 ${percent}%, #000000 ${percent}%, #000000 100%)`;
+      });
+
+      // Schimbă poziția audio când slider-ul se mișcă
+      slider.addEventListener('input', () => {
+        audio.currentTime = slider.value;
+        const percent = (slider.value / slider.max) * 100;
+        slider.style.background = `linear-gradient(to right, #ff8300 0%, #ff8300 ${percent}%, #000000 ${percent}%, #000000 100%)`;
+      });
+    });
+  </script>
+
+  <script>
+    const form = document.querySelector('form[role="search"]');
+    const input = document.getElementById("searchInput");
+
+    // curățăm highlight-urile la fiecare căutare NOUĂ
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const query = input.value.trim();
+      if (!query) return;
+
+      clearHighlights();
+
+      const regex = new RegExp(query, "gi");
+      let found = false;
+
+      const walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT,
+        null
+      );
+
+      const textNodes = [];
+      while (walker.nextNode()) {
+        textNodes.push(walker.currentNode);
+      }
+
+      textNodes.forEach(node => {
+        if (regex.test(node.nodeValue)) {
+          found = true;
+
+          const span = document.createElement("span");
+          span.innerHTML = node.nodeValue.replace(
+            regex,
+            match => `<span class="highlight">${match}</span>`
+          );
+
+          node.parentNode.replaceChild(span, node);
+        }
+      });
+
+      if (!found) {
+        alert("No content found");
+      }
+    });
+
+    // funcție sigură de curățare
+    function clearHighlights() {
+      document.querySelectorAll(".highlight").forEach(span => {
+        span.replaceWith(span.textContent);
+      });
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
