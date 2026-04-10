@@ -303,6 +303,16 @@
     .margarina {
       margin: 20px 0px;
     }
+
+    .avatar-rotund {
+  width: 200px;          /* sau ce dimensiune vrei */
+  height: 200px;         /* ideal pătrată pentru cerc perfect */
+  border-radius: 50%;    /* decupare pe rotund */
+  border: 2px solid #ff8300; /* bordură portocalie de 2px */
+  object-fit: cover;     /* ca să umple frumos cadrul rotund */
+}
+
+
   </style>
 
 </head>
@@ -394,6 +404,7 @@
 
       <div class="col-12 col-md-6 mb-6">
         <div class="custom-audio-player d-flex flex-column">
+          <img src="imagine.jpg" class="avatar-rotund" alt="Avatar">
           <h3 style="color: #ff8300;">Episodul 1</h3>
           <button class="play-pause">Play</button>
           <input type="range" class="slider" min="0" value="0">
@@ -403,6 +414,7 @@
 
       <div class="col-12 col-md-6 mb-6">
         <div class="custom-audio-player d-flex flex-column">
+          <img src="imagine.jpg" class="avatar-rotund" alt="Avatar">
           <h3 style="color: #ff8300;">Episodul 2</h3>
           <button class="play-pause">Play</button>
           <input type="range" class="slider" min="0" value="0">
